@@ -4,7 +4,17 @@
 
 <web-app>
   <display-name>mybatis_setting</display-name>
-  
+
+  <servlet>
+    <servlet-name>UserController</servlet-name>
+    <servlet-class>com.mybatis.controller.UserController</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>UserController</servlet-name>
+    <url-pattern>/usercontroller</url-pattern>
+  </servlet-mapping>
+
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>

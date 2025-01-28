@@ -1,7 +1,5 @@
 package com.mybatis.init;
 
-import org.apache.logging.log4j.core.config.Configurator;
-
 import java.io.File;
 
 public class CreateLogDir {
