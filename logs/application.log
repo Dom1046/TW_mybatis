@@ -1,3 +1,23 @@
 [2025-01-28 11:28:50] INFO  LogTest - Log4j2 ì„¤ì •ì´ ì •ìƒì ìœ¼ë¡œ ë™ìž‘ ì¤‘ìž…ë‹ˆë‹¤.
 [2025-01-28 11:28:50] WARN  LogTest - ê²½ê³  ë©”ì‹œì§€ í…ŒìŠ¤íŠ¸
 [2025-01-28 11:28:50] ERROR LogTest - ì—ëŸ¬ ë©”ì‹œì§€ í…ŒìŠ¤íŠ¸
+[2025-01-28 13:29:23] INFO  UserController - doGet¸Þ¼­µå ½ÇÇà
+[2025-01-28 13:29:23] INFO  UserController - doPost¸Þ¼­µå Á÷Á¢ÀÔ·Â
+[2025-01-28 13:40:15] INFO  UserController - doGet¸Þ¼­µå ½ÇÇà
+[2025-01-28 13:41:21] DEBUG LogFactory - Logging initialized using 'class org.apache.ibatis.logging.log4j2.Log4j2Impl' adapter.
+[2025-01-28 13:41:21] DEBUG PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+[2025-01-28 13:41:21] DEBUG PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+[2025-01-28 13:41:21] DEBUG PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+[2025-01-28 13:41:21] DEBUG PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+[2025-01-28 13:41:21] INFO  UserController - doGet¸Þ¼­µå ½ÇÇà
+[2025-01-28 13:41:21] DEBUG JdbcTransaction - Opening JDBC Connection
+[2025-01-28 13:41:22] DEBUG PooledDataSource - Created connection 935496483.
+[2025-01-28 13:41:22] DEBUG JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@37c28b23]
+[2025-01-28 13:41:22] DEBUG selectAll - ==>  Preparing: select * from user
+[2025-01-28 13:41:22] DEBUG selectAll - ==> Parameters: 
+[2025-01-28 13:41:22] DEBUG selectAll - <==      Total: 1
+[2025-01-28 13:41:22] INFO  UserController - Á¶È¸µÈ user ¼ö: 1
+[2025-01-28 13:41:22] DEBUG JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@37c28b23]
+[2025-01-28 13:41:22] DEBUG JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@37c28b23]
+[2025-01-28 13:41:22] DEBUG PooledDataSource - Returned connection 935496483 to pool.
+[2025-01-28 13:41:22] INFO  UserController - doPost¸Þ¼­µå Á÷Á¢ÀÔ·Â

@@ -68,4 +68,15 @@ public class User_Dto {
         this.pet = pet;
     }
 
+    @Override
+    public String toString() {
+        return "User_Dto{" +
+                "user_id=" + user_id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", job='" + job + '\'' +
+                ", sex='" + sex + '\'' +
+                ", pet=" + pet +
+                '}';
+    }
 }
