@@ -25,13 +25,13 @@ public class UserController extends HttpServlet {
 
         //3. 응답생성
         if ("view".equals(action)) {
-            logger.info("doPost메서드 실행");
+            logger.info("doGet메서드 실행");
             //JSP 페이지로 포워딩
             req.setAttribute("message", message);
             RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/views/user.jsp");
             rd.forward(req, resp);
         } else {
-            logger.info("doPost메서드 직접입력");
+            logger.info("doGet메서드 직접입력");
             // 직접 입력
             resp.setContentType("text/html;charset=utf-8");
             PrintWriter out = resp.getWriter();
