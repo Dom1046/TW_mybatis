@@ -8,10 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>회원정보</title>
+    <title>가입완료</title>
 </head>
 <body>
-    <h1>${message}</h1> <%--User Controller 에서 받는 message --%>
-    <p>This is User JSP view.</p>
+<p>회원가입완료</p>
+<p><%= request.getAttribute("result") %></p>
+<a href="/webapps/mybatis">회원입력창으로 돌아가기</a>
 </body>
 </html>

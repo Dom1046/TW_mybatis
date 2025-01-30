@@ -1,9 +1,7 @@
 package com.mybatis.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
-
 import com.mybatis.config.SqlSessionFactoryManager;
 import com.mybatis.domain.Pet;
 import com.mybatis.domain.User_Dto;
@@ -39,14 +37,14 @@ public class UserController extends HttpServlet {
                         .append(" 애완동물: ").append(user.getPet()).append("<br>");
             }
 
-            req.setAttribute("message", message.toString());
-            RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/views/userView.jsp");
+            req.setAttribute("result", message.toString());
+            RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/views/userResult.jsp");
             rd.forward(req, resp);
 
         } catch (Exception e) {
             logger.error("doGet 에러 발생: ", e.getMessage()); // 예외 로깅
-            req.setAttribute("message", "회원 정보를 가져오는 중 오류가 발생했습니다.");
-            RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/views/userView.jsp"); // 에러 페이지로 이동
+            req.setAttribute("result", "회원 정보를 가져오는 중 오류가 발생했습니다.");
+            RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/views/userResult.jsp"); // 에러 페이지로 이동
             rd.forward(req, resp);
         }
     }
@@ -55,20 +53,8 @@ public class UserController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         logger.info("doPost 메서드 실행");
 
-        req.setCharacterEncoding("UTF-8"); // 요청 문자 인코딩 설정
-
         String name = req.getParameter("name");
-        int age = 0;
-        try {
-            age = Integer.parseInt(req.getParameter("age"));
-        } catch (NumberFormatException e) {
-            logger.error("doPost age 파싱 에러: ", e);
-            req.setAttribute("errorMessage", "나이는 숫자로 입력해야 합니다.");
-            RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/views/error.jsp");
-            rd.forward(req, resp);
-            return; // 오류 발생 시 메서드 종료
-        }
-
+        int age = Integer.parseInt(req.getParameter("age"));
         String job = req.getParameter("job");
         String sex = req.getParameter("sex");
         String pet = req.getParameter("pet");
@@ -80,14 +66,14 @@ public class UserController extends HttpServlet {
             mapper.insertUser(userCreateDto);
             session.commit();
 
-            String message = name + "님 안녕하세요! \n 회원등록이 완료되었습니다.";
+            String message = name + "님 안녕하세요! 회원등록이 완료되었습니다.";
             req.setAttribute("result", message);
-            req.getRequestDispatcher("/WEB-INF/index.jsp").forward(req, resp);
+            req.getRequestDispatcher("/WEB-INF/views/userView.jsp").forward(req, resp);
 
         } catch (Exception e) {
             logger.error("doPost 에러 발생: ", e.getMessage());
-            req.setAttribute("errorMessage", "회원 등록 중 오류가 발생했습니다.");
-            RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/views/error.jsp");
+            req.setAttribute("result", "회원 등록 중 오류가 발생했습니다.");
+            RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/views/userView.jsp");
             rd.forward(req, resp);
         }
     }

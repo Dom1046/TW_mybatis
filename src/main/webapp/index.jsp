@@ -31,14 +31,6 @@
 
     <input type="submit" value="제출">
 </form>
-
-<%-- 서블릿에서 전달된 결과 표시 --%>
-<%
-    String result = (String) request.getAttribute("result");
-    if (result != null) {
-        out.println("<p>결과: " + result + "</p>");
-    }
-%>
-<a type="button" href="/usercontroller">회원정보 보기</a>
+<a type="button" href="/webapps/mybatis/usercontroller">모든회원정보 보기</a>
 </body>
 </html>
