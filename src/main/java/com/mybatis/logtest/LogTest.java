@@ -1,4 +1,4 @@
-package com.mybatis;
+package com.mybatis.logtest;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

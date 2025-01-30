@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>회원정보</title>
 </head>
 <body>
     <h1>${message}</h1> <%--User Controller 에서 받는 message --%>

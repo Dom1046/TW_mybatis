@@ -1,4 +1,4 @@
-package com.mybatis.init;
+package com.mybatis.logtest;
 
 import java.io.File;
 

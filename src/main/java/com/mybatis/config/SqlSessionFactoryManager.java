@@ -9,7 +9,7 @@ import java.io.Reader;
 
 public class SqlSessionFactoryManager {
 
-    private static SqlSessionFactory sqlSessionFactory;
+    private static final SqlSessionFactory sqlSessionFactory;
 
     static {
         String configPath = "mybatis-config.xml";  // resources 루트 기준

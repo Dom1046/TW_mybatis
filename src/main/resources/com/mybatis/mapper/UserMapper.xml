@@ -5,6 +5,11 @@
 
 <mapper namespace="com.mybatis.mapper.UserMapper">
     <select id="selectAll" resultType="USERDto">
-        select * from user
+        SELECT * FROM user
     </select>
+
+    <insert id="insertUser" parameterType="com.mybatis.dto.UserCreateDto" useGeneratedKeys="true" keyProperty="user_id">
+        INSERT INTO user(name, age, job, sex, pet)
+        values( #{name}, #{age}, #{job}, #{sex}, #{pet, typeHandler=org.apache.ibatis.type.EnumTypeHandler});
+    </insert >
 </mapper>
