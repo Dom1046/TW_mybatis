@@ -51,6 +51,7 @@ public class CalculatorController3 extends HttpServlet {
             exp += (dot == null) ? "" : dot;
         }
         Cookie expCookie = new Cookie("exp", exp);
+        if (operator != null && operator.equals("C")) expCookie.setMaxAge(0);
         expCookie.setPath("/");
         resp.addCookie(expCookie);
 
