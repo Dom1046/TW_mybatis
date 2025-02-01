@@ -18,22 +18,22 @@ public class CalculatorController extends HttpServlet {
 
         PrintWriter out = resp.getWriter();
 
-        String num1 = req.getParameter("fNum");
-        String num2 = req.getParameter("sNum");
+        String op = req.getParameter("operator");
+        String[] nums = req.getParameterValues("num");
 
-        if (num1 == null || num2 == null || num2.isEmpty() || num1.isEmpty()) {
-            out.println("숫자를 입력해주세요.");
-        } else {
-            int fNum = Integer.parseInt(num1);
-            int sNum = Integer.parseInt(num2);
-
-            if (req.getParameter("operator").equals("더하기")) {
-                int sum = fNum + sNum;
-                out.println(sum);
+        int result = 0;
+        if (nums != null || nums.length != 0) {
+            if (op.equals("더하기")) {
+                for (String num : nums) {
+                    result += Integer.parseInt(num);
+                }
             } else {
-                int sum = fNum - sNum;
-                out.println(sum);
+                result = Integer.parseInt(nums[0]);
+                for (int i = 1; i < nums.length; i++) {
+                    result -= Integer.parseInt(nums[i]);
+                }
             }
+            out.println(result);
         }
     }
 }
