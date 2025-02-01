@@ -1,21 +1,17 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                             https://jakarta.ee/xml/ns/jakartaee/web-app_6_1.xsd"
+         version="6.1"
+         metadata-complete="false">
+<!--  metadata-complete false하면 다른곳도 있으니 찾아보라는 뜻-->
 
-<web-app>
   <display-name>mybatis_setting</display-name>
 
-  <servlet>
-    <servlet-name>UserController</servlet-name>
-    <servlet-class>com.mybatis.controller.UserController</servlet-class>
-  </servlet>
-
-  <servlet-mapping>
-    <servlet-name>UserController</servlet-name>
-    <url-pattern>/usercontroller</url-pattern>
-  </servlet-mapping>
-
+  <!-- 기본 웰컴 파일 설정 -->
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+
 </web-app>

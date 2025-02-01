@@ -11,6 +11,8 @@
     <title>최초 페이지</title>
 </head>
 <body>
-<h1>최초 페이지</h1>
+    <h1>최초 페이지</h1>
+    <a href="hello">인사하기</a>
+    <a href="hello?cnt=3">인사하기</a>
 </body>
 </html>

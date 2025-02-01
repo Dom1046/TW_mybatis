@@ -8,6 +8,7 @@ import com.mybatis.config.SqlSessionFactoryManager;
 import com.mybatis.domain.User_Dto;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -16,6 +17,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+@WebServlet("/usercontroller")
 public class UserController extends HttpServlet {
     //로그
     private final Logger logger = LogManager.getLogger(UserController.class);
