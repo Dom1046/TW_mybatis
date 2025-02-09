@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--이부분이 빠지니  Cause: org.xml.sax.SAXParseException; lineNumber: 2; columnNumber: 62; 문서 루트 요소 "mapper"은(는) DOCTYPE 루트 "null"과(와) 일치해야 합니다. -->
+<!--라는 에러가 발생함-->
+
+<!--그리고 이렇게 쿼리 xml 생성시 key값 identity(1,1) 안되있으면 오류발생 -> 테이블에서 identity(1,1) 변경 불가하니 처음 만들때 까먹지 말기-->
+<mapper namespace="tomcat.webserver.demo3.mapper.UserMapper">
+<!--값 입력-->
+<insert id="insertUser" parameterType="tomcat.webserver.demo3.entity.User">
+    INSERT INTO users (name, email) VALUES (#{name},#{email})
+</insert>
+<!--회원조회-->
+<select id="getUserById" parameterType="int" resultType="tomcat.webserver.demo3.entity.User">
+    SELECT * FROM users WHERE id = #{id}
+</select>
+</mapper>

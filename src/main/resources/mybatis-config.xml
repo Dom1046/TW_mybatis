@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+<!--                JDBC mssql 의존성 필요하니 까먹지 말기-->
+                <property name="driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+                <property name="url" value="jdbc:sqlserver://localhost:1433;databaseName=master;encrypt=true;trustServerCertificate=true;"/>
+                <property name="username" value="sa"/>
+                <property name="password" value="1111"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+<!--        이부분은 resources 이후의 것들 적기 처음 디렉토리에서는 / 제외-->
+        <mapper resource="mapper/UserMapper.xml"/>
+    </mappers>
+</configuration>
